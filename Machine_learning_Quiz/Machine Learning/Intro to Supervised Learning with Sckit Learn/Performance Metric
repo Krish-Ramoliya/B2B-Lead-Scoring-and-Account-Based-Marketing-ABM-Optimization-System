@@ -1,0 +1,21 @@
+Separate the target and features:
+X = df.drop(['Unnamed: 32', 'id', 'diagnosis'], axis=1)  
+y = df['diagnosis']
+
+Split the data:
+from sklearn.model_selection import train_test_split  
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+Create KNeighborsClassifier instance:
+from sklearn.neighbors import KNeighborsClassifier  
+knn = KNeighborsClassifier()
+
+Train the model:
+knn.fit(X_train, y_train)
+
+Make predictions:
+y_pred = knn.predict(X_test)
+
+Calculate f1-score:
+from sklearn.metrics import f1_score  
+f1_score_test = f1_score(y_test, y_pred)

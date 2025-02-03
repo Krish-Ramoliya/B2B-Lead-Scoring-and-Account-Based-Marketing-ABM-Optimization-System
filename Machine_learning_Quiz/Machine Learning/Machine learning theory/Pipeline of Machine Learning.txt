@@ -1,0 +1,11 @@
+Quiz
+
+1.  Why is data gathering a critical first step in the machine learning workflow?
+Data gathering provides the foundation for training and testing models, ensuring they are representative of real-world scenarios.
+
+2.  What is the purpose of the training and testing phases in the workflow?
+The purpose of the training and testing phases in the workflow is to ensure that the model can learn patterns from the data and generalize its knowledge to make accurate predictions on new, unseen data.
+
+3.  Why is model evaluation crucial in the machine learning workflow?
+Model evaluation measures the performance of the model and ensures its effectiveness on new, unseen data.
+

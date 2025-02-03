@@ -1,0 +1,222 @@
+1. Find Unique Elements in a List
+
+Implement the unique_list_elements function that takes a list as input and returns a new list with only the unique elements from the original list.
+
+Example:
+
+>>> unique_list_elements([2, 3, 2, 3, 4, 5, 6, 5, 6, 6])
+[2, 3, 4, 5, 6]
+Ensure the function handles the task correctly and provides the expected output for different input cases.
+
+=> def unique_list_elements(input_list):
+    unique_items = []
+    for item in input_list:
+        if item not in unique_items:
+            unique_items.append(item)
+    return unique_items
+
+2. Find Common Elements in Two Lists
+
+Implement the get_common function that takes two lists as input and returns a new list containing only the common elements present in both lists.
+
+>>>input_list_1 = [1, 2, 3, 4, 5]
+>>>input_list_2 = [4, 5, 6, 7, 8]
+
+>>>get_common(input_list_1, input_list_2)
+[4, 5]
+
+=> def get_common(input_list_1, input_list_2):
+    common_items = []
+    for item in input_list_1:
+        if item in input_list_2:
+            common_items.append(item)
+    return common_items
+
+3. Calculate Average of Numbers
+
+Create the get_average function that accepts a list of numbers as input and calculates the average of those numbers.
+
+>>>get_average([34, 21, 78, 96, 12, 15])
+42.666666666666664
+Ensure the function accurately computes the average of various input lists, providing the correct result for each case.
+
+=> def get_average(input_list):
+    total_items = len(input_list)
+    sum_total = sum(input_list)
+    average = sum_total/total_items
+    return average
+
+4. Sort Strings Alphabetically
+
+Define the sort_alphabets function, which accepts a list of strings as input and generates a new list with the strings sorted in alphabetical order.
+
+>>>sort_alphabets(['e', 'd', 'f', 'a', 'c', 'b'])
+['a', 'b', 'c', 'd', 'e', 'f']
+Verify that the function properly sorts the strings in alphabetical order when provided with different input lists.
+
+=> def sort_alphabets(input_list):
+    new_list = sorted(input_list)
+    return new_list
+
+5. Square Numbers in a List
+
+Create the square_list function that takes a list of numbers as input and generates a new list with each number squared.
+
+>>>square_list([1, 3, 5, 7, 9])
+[1, 9, 25, 49, 81]
+Ensure the function correctly squares each number in the input list and provides the expected output for different input cases.
+
+=> def square_list(input_list):
+    new_list = []
+    for item in input_list:
+        squared = item*item
+        new_list.append(squared)
+    return new_list
+
+6. Map String Lengths
+
+Create the count_len function, which accepts a list of strings as input and returns a new list where each element represents the length of the corresponding string in the input list.
+
+An Example of the function:
+
+>>>count_len(['af', 'jk', 'lpoil', 'ptyuh'])
+[2, 2, 5, 5]
+Ensure the function correctly calculates the length of each string in the input list and provides the expected output for different sets of strings.
+
+=> def count_len(input_list):
+    new_list = []
+    for item in input_list:
+        len_string = len(item)
+        new_list.append(len_string)
+    return new_list
+
+
+
+
+Dataset Activities
+In this section, we're using a list of titles of books imported from the file computer_science_books.txt.
+
+Each element in the list represents the title of the book. You can access individual titles of books by indexing the list. For example, computer_science_books[0] will give you the title of the first book, computer_science_books[-1] for the title of the last book, and so on.
+
+The simple list computer_science_books looks like this:
+
+computer_science_books = [
+    "Introduction to the Theory of Computation by Michael Sipser",
+    "Cracking the Coding Interview by Gayle Laakmann McDowell",
+    "Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin",
+    "The Pragmatic Programmer: Your Journey to Mastery by Andrew Hunt and David Thomas",
+    "Algorithms to Live By: The Computer Science of Human Decisions by Brian Christian and Tom Griffiths",
+   ...]
+
+7. Count unique books in the computer_science_books list.
+
+=> unique_books = []
+
+for book in computer_science_books:
+    if book not in unique_books:
+        unique_books.append(book)
+
+len(unique_books)
+
+8. Verify the Presence of a Specific Book
+
+Check if the well-known Computer Science book Algorithms to Live By  The Computer Science of Human Decisions by Brian Christian is in the dataset.
+
+If it is not in the list computer_science_books then add it at the end of the list.
+
+=> Part 1: Checking for membership
+
+'Algorithms to Live By  The Computer Science of Human Decisions by Brian Christian' in computer_science_books 
+
+Part 2: Adding the book as it is not present in the dataset
+
+computer_science_books.append('Algorithms to Live By  The Computer Science of Human Decisions by Brian Christian')
+
+9. Replace an item from the list with another item
+
+Replace the Book "Pattern Recognition and Machine Learning by Christopher M. Bishop" with "Pattern Recognition and Machine Learning 2006 2nd Edition by Christopher M. Bishop".
+
+NOTE: You have to replace all the instances, may be there are duplicate entries
+
+=> for i in range(len(computer_science_books)):
+    if computer_science_books[i] == "Pattern Recognition and Machine Learning by Christopher M. Bishop":
+        computer_science_books[i] = "Pattern Recognition and Machine Learning 2006 2nd Edition by Christopher M. Bishop"
+
+
+10. Find if there are duplicates
+
+Count the occurrences of "Python Machine Learning by Sebastian Raschka and Vahid Mirjalili" to check if there are any duplicate elements in the dataset. Store the count in the variable count_python_ml.
+
+=> count_python_ml = 0
+for book in computer_science_books:
+    if book == "Python Machine Learning by Sebastian Raschka and Vahid Mirjalili":
+        count_python_ml += 1
+
+count_python_ml
+
+11. Remove all the duplicate books in the dataset.
+
+Create a new list unique_books which contains only the unique books from the list computer_science_books.
+
+=> unique_books = []
+for book in computer_science_books:
+    if book not in unique_books:
+        unique_books.append(book)
+
+print(unique_books)
+
+12. Sort the books in alphabetical order
+
+Sort the list computer_science_books in alphabetical order and update the list.
+
+=> computer_science_books.sort()
+computer_science_books
+
+13. Create a new list less_than_60 which will have books of less than 60 characters long.
+
+Create a new list less_than_60 which will have books of less than 60 characters long.
+
+Don't worry about the duplicates in the list.
+
+=> less_than_60 = []
+for book in computer_science_books:
+    if len(book) < 60:
+        less_than_60.append(book)
+less_than_60
+
+14. Which book has the shortest name and which book has the longest name.
+
+Find the book which has the shortest name and the book which has the longest name. Store the book with the shortest name in the variable shortest_book and the book with the longest name in the variable longest_book.
+
+If there are multiple books with the same length, store the first book in the variable which comes first by alphabetical order.
+
+=> shortest_book = computer_science_books[0]
+longest_book = computer_science_books[0]
+
+for book in computer_science_books:
+    if len(book) < len(shortest_book):
+        shortest_book = book
+
+    if len(book) > len(longest_book):
+        longest_book = book
+
+print(f"Len of Longest Book : {longest_book} is : {len(longest_book)}\nLength of Shortest Book : {shortest_book} is : {len(shortest_book)}")
+
+15. How many characters are there in the shortest name
+
+How many characters are there in the shortest name?
+
+=> shortest = 0
+shortest_book = computer_science_books[0]
+
+for book in computer_science_books:
+    if len(book) < len(shortest_book):
+        shortest_book = book
+        shortest = len(shortest_book)
+
+print(f'Length of Shortest Book : {shortest_book} is : {shortest}')
+
+
+
+
+

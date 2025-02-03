@@ -1,0 +1,4 @@
+1. True or False: In Scikit-Learn, each machine learning model is implemented as a class, ensuring consistent interfaces and making it easy to work with different models using similar methods and attributes.
+A: True
+2. True or False: To use a specific machine learning model in Scikit-Learn, you need to create an instance of its corresponding class using the model's constructor, which initializes the model with default or user-specified settings.
+A: True

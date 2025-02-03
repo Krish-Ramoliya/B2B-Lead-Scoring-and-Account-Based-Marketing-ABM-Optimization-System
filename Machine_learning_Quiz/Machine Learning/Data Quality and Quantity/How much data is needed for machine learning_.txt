@@ -1,0 +1,25 @@
+True or False: Having a large dataset guarantees high data quality
+False
+
+True or False: Data quality is a subjective term and does not have a universally agreed-upon definition
+True
+
+Scenario Question
+
+You are working on a project to predict student performance based on various factors such as study hours, attendance, and extracurricular activities. The dataset you have includes information about these features for each student.
+
+In this scenario, what would be an example of a high-quality dataset ?
+
+A. A dataset with accurate and up-to-date information about study hours, attendance, and extracurricular activities for a diverse set of students.
+
+B. A dataset with study hours as the only feature for a small subset of students.
+
+C. A dataset with random and inconsistent entries for study hours, attendance, and extracurricular activities.
+
+D. A dataset with missing values for most of the entries related to study hours, attendance, and extracurricular activities.
+
+Please select the most appropriate option and provide reasoning for your choice.
+A
+
+
+

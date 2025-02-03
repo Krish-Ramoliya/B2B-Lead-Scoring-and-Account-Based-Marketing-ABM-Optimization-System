@@ -1,0 +1,9 @@
+Quiz
+1.  Artificial Intelligence is _____
+a branch of computer science that constitutes underlying technology that enables computers to simulate human intelligence
+
+2.  Which of the following statements about machine learning is TRUE?
+Machine learning is the intelligence technology that provides computers with advanced abilities to execute processes without being specifically programmed to do so
+
+3.  True or False: The late 1980s marked a resurgence in the development of artificial intelligence (AI), driven by advancements in areas like chess and computer vision.
+True

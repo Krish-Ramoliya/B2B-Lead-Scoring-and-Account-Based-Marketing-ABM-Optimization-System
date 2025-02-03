@@ -1,0 +1,24 @@
+Determining whether a machine learning problem is supervised or unsupervised can be based on the nature of the data and the objective of the task. Here are six scenario-based questions to identify whether a problem is a supervised or unsupervised learning problem:
+
+1.  Customer Segmentation for Marketing Strategy
+Given a dataset containing customer demographics and purchase history, how can we group customers based on their similarities to tailor marketing strategies?
+Unsupervised Learning
+
+2.  Anomaly Detection in Network Traffic
+How can we identify unusual patterns or anomalies in network traffic that may indicate a security breach, without having prior labeled examples of such incidents?
+Unsupervised Learning
+
+3.  Predicting Housing Prices based on Features
+Given historical data on housing prices and features such as location, size, and amenities, can we build a model to predict the prices of new houses?
+Supervised Learning
+
+4.  Predicting Customer Satisfaction for an E-commerce Website
+Given customer feedback data on an e-commerce website where customers can rate their satisfaction on a scale from 1 to 5, should we model this problem as a classification or a regression task?
+Classification problem
+Regression problem
+
+5.  You are a healthcare researcher aiming to identify potential subgroups of patients based on their medical records to personalize treatment plans. How could unsupervised learning be utilized to uncover distinct patient clusters with similar medical profiles, allowing for more targeted and effective healthcare interventions?
+Unsupervised learning can segment patients into clusters based on their medical records, revealing distinct subgroups without using any predefined labels.
+
+6.  You are an e-commerce manager and want to predict whether customers are likely to make a purchase during their website visit. How can supervised learning be applied to develop a predictive model that helps classify customers into 'potential buyers' and 'non-buyers' based on historical data and labeled purchase information?
+Supervised learning can be employed to classify customers into groups based on their purchase history and other features, allowing for targeted marketing strategies.

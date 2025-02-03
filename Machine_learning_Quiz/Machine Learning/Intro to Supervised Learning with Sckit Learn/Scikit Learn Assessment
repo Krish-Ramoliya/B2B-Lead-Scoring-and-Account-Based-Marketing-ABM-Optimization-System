@@ -1,0 +1,39 @@
+
+
+### 1. **Scikit-Learn is primarily focused on:**
+   - **Answer:** Traditional Machine Learning  
+     Scikit-Learn is a library for traditional machine learning algorithms such as regression, classification, clustering, and preprocessing.
+
+---
+
+### 2. **In Scikit-Learn, what is the role of a model class?**
+   - **Answer:** It represents a machine learning algorithm and its associated methods.  
+     A model class (e.g., `RandomForestClassifier`, `LinearRegression`) encapsulates the algorithm and provides methods for training, prediction, and evaluation.
+
+---
+
+### 3. **Scikit-Learn is built on top of which Python libraries?**
+   - **Answer:** NumPy, SciPy, and Matplotlib  
+     These libraries provide the foundational operations for numerical computations, scientific computing, and basic visualization that Scikit-Learn leverages.
+
+---
+
+### 4. **What does the following line of code achieve in Scikit-Learn?**
+   ```python
+   from sklearn.ensemble import RandomForestClassifier
+   classification_model = RandomForestClassifier()
+   ```
+   - **Answer:** It creates an instance of a random forest classifier for classification tasks.  
+     This initializes a Random Forest model, which can be used for training on classification problems.
+
+---
+
+### 5. **What is the purpose of the following code in Scikit-Learn?**
+   ```python
+   from sklearn.neighbors import KNeighborsClassifier
+   classification_model = KNeighborsClassifier()
+   ```
+   - **Answer:** It creates an instance of a k-nearest neighbors classifier for classification tasks.  
+     The `KNeighborsClassifier` is used to model classification tasks based on the proximity of data points in feature space.
+
+---

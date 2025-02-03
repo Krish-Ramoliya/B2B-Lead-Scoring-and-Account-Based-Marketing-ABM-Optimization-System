@@ -1,0 +1,33 @@
+Here are three questions with answers based on "Naive Bayes":
+
+---
+
+**Q1. What is the Naive Bayes algorithm?**  
+**A:** Naive Bayes is a probabilistic classification algorithm based on Bayes' Theorem. It assumes that the features are conditionally independent given the class label (hence "naive"). Despite this assumption, it performs well in many real-world applications, such as spam filtering and sentiment analysis.
+
+---
+
+**Q2. What is Bayes' Theorem, and how is it used in Naive Bayes?**  
+**A:** Bayes' Theorem is given by:  
+\[
+P(C|X) = \frac{P(X|C) \cdot P(C)}{P(X)}
+\]  
+Where:  
+- \( P(C|X) \): Posterior probability of class \( C \) given input \( X \).  
+- \( P(X|C) \): Likelihood of input \( X \) given class \( C \).  
+- \( P(C) \): Prior probability of class \( C \).  
+- \( P(X) \): Evidence, the probability of input \( X \).  
+
+Naive Bayes calculates \( P(C|X) \) for each class and predicts the one with the highest probability.
+
+---
+
+**Q3. What are the types of Naive Bayes classifiers, and when are they used?**  
+**A:**  
+1. **Gaussian Naive Bayes**: Used when the features are continuous and follow a normal distribution.  
+2. **Multinomial Naive Bayes**: Used for discrete data, such as word counts in text classification.  
+3. **Bernoulli Naive Bayes**: Used for binary/Boolean data, such as the presence or absence of features.
+
+---
+
+Let me know if you'd like examples or visualizations to understand it better! 😊

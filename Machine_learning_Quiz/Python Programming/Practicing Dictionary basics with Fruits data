@@ -1,0 +1,222 @@
+1. Create a fruits dictionary
+
+Given a variable fruits_data containing information about fruits, your task is to create a dictionary called fruits that mirrors the data in fruits_data. The resulting fruits dictionary should have the following structure:
+
+{
+    'apple': {'color': 'red', 'price': 0.99},
+    'banana': {'color': 'yellow', 'price': 0.59},
+    # Add more fruits here
+}
+
+=> fruits = {}
+for name, color, price in fruits_data:
+    fruits[name] = {'color': color, 'price': price}
+
+fruits
+
+
+2. Create a Dictionary of Colors and Fruits
+
+Building upon the previous activity where we created a dictionary named fruits, your next task is to create a new dictionary called colors. The colors dictionary should retain the same data as fruits, but with a different structure. In the colors dictionary, the keys should represent the colors of the fruits, and the values should be lists containing the names of fruits of that color.
+
+Upon completion, the colors dictionary should resemble the following structure:
+
+{
+    'red': ['apple', 'cherry', 'strawberry', 'raspberry'],
+    'yellow': ['banana', 'lemon'],
+    # Add more colors and associated fruits here
+}
+
+=> colors = {}
+
+for fruit in fruits:
+    name = fruit
+    colors.setdefault(fruits[name]['color'], []).append(name)
+
+colors
+
+
+3. Expand the Fruits Dictionary
+
+Your objective is to augment the existing fruits dictionary by adding the following fruits and their associated information:
+
+('cherry', 'red', 1.99)
+('lemon', 'yellow', 0.79)
+('lime', 'green', 0.69)
+
+=> for name, color, price in [
+    ('cherry', 'red', 1.99),
+    ('lemon', 'yellow', 0.79),
+    ('lime', 'green', 0.69)
+]:
+    fruits[name] = {'color': color, 'price': price}
+
+
+4. 
+Count the Colors in the 'fruits' Dictionary
+
+Determine the total number of unique colors present in the fruits dictionary. Please submit your answer in the input field below.
+
+=> # Count different colors of fruits not the number of fruits
+colors = set()
+for fruit in fruits:
+    colors.add(fruits[fruit]['color'])
+
+len(colors)
+
+
+5. Determine the Color of 'Mango' in the 'fruits' Dictionary
+
+Find and report the color of the 'mango' fruit in the fruits dictionary. Please enter your answer in the input field below.
+
+=> fruits['mango']['color']
+
+
+6. 
+Quantify the Count of Red Fruits in the 'fruits' Dictionary
+
+Calculate and provide the total count of fruits with the color red in the fruits dictionary. Please input your answer into the designated field below.
+
+=> count = 0
+for fruit in fruits:
+    if fruits[fruit]['color'] == 'red':
+        count += 1
+
+count
+
+
+7. Calculate the Average Price of All Fruits
+
+Determine the average price of all the fruits within the fruits dictionary. Please input your answer in the designated field below.
+
+=> total = 0
+
+for fruit in fruits:
+    total += fruits[fruit]['price']
+
+total / len(fruits)
+
+
+8. 
+Develop a Function to Identify Expensive Fruits
+
+Your task is to create a Python function named find_expensive_fruits that accepts two parameters: a dictionary of fruits and a threshold price. The function should return a set of fruit names that have a price exceeding the specified threshold.
+
+Here's how the function definition should appear:
+
+def find_expensive_fruits(fruits_data, threshold_price):
+    # Your code goes here
+
+=> def find_expensive_fruits(fruits_data, threshold_price):
+    expensive_fruits = set()
+    for fruit, info in fruits_data.items():
+        if info['price'] > threshold_price:
+            expensive_fruits.add(fruit)
+    return expensive_fruits
+
+# Call the function and print the result for threshold = 1.5 
+threshold = 1.5
+expensive_fruits_set = find_expensive_fruits(fruits, threshold)
+print("Fruits with price higher than", threshold, ":")
+print(expensive_fruits_set)
+
+
+9. 
+Determine the Average Caloric Value of Fruits
+
+Your objective is to compute the average caloric value of all fruits listed in the fruits dictionary. Please submit your answer in the input field provided.
+
+=> def calculate_average_calories(fruits_data):
+    total_calories = 0
+    num_fruits = len(fruits_data)
+    for info in fruits_data.values():
+        total_calories += info['calories']
+    average_calories = total_calories / num_fruits
+    return average_calories
+
+# Call the function and print the result
+avg_calories = calculate_average_calories(fruits)
+print("Average Calories:", avg_calories)
+
+
+10. 
+Locate Fruits with 'Excellent' Vitamin C Content
+
+Your task is to identify and compile a list of fruits with "excellent" vitamin C content. This list should be stored in a variable named excellent_vitamin_c_fruits.
+
+For reference, the result should be in the format of a list, such as: ['apple', 'orange', 'kiwi'].
+
+=> excellent_vitamin_c_fruits = []
+for fruit, info in fruits.items():
+    if info['nutrition']['vitamin C'] == 'excellent':
+        excellent_vitamin_c_fruits.append(fruit)
+
+print(excellent_vitamin_c_fruits)
+
+
+11. Compile a List of Fruits with 'low' Sugar Content
+
+Your objective is to generate a list of fruits with "low" sugar content and store this list in a variable named low_sugar_fruits.
+
+For reference, the result should be in the format of a list, like this: ['apple', 'orange', 'kiwi'].
+
+=> low_sugar_fruits = []
+for fruit, info in fruits.items():
+    if info['nutrition']['sugar'] == 'low':
+        low_sugar_fruits.append(fruit)
+
+print(low_sugar_fruits)
+
+
+12. Identify the Fruit with the Highest Caloric Content
+
+Your task is to determine and report the fruit with the highest caloric content. Please enter the name of the fruit in the input field provided.
+
+=> max_calories = 0
+max_calories_fruit = None
+for fruit, info in fruits.items():
+    if info['calories'] > max_calories:
+        max_calories = info['calories']
+        max_calories_fruit = fruit
+
+print(max_calories_fruit)
+
+
+13. Remove 'Banana' from the 'fruits' Dictionary
+
+Your task is to eliminate the entry for 'banana' from the fruits dictionary and then update the fruits dictionary accordingly.
+
+=> del fruits['banana']
+
+
+14. Generate a Duplicate of the 'fruits' Dictionary
+
+Your goal is to produce a copy of the fruits dictionary and store this copy in a variable named fruits_copy.
+
+=> fruits_copy = fruits.copy()
+
+
+15. Create a Function to Modify Fruit Prices
+
+Your task is to construct a Python function named update_fruit_price that requires three parameters: the fruits dictionary, the name of the fruit, and the new price. This function should adjust the price of the specified fruit within the dictionary and return the updated dictionary.
+
+Here's how the function definition should appear:
+
+def update_fruit_price(fruits_data, fruit_name, new_price):
+    # Your code goes here
+
+=> def update_fruit_price(fruits_data, fruit_name, new_price):
+    fruits_data[fruit_name]['price'] = new_price
+    return fruits_data
+
+# Call the function and print the result
+new_fruits = update_fruit_price(fruits, 'apple', 1.99)
+print(new_fruits)
+
+
+16. Empty the 'fruits' Dictionary
+
+Your task is to clear or empty the fruits dictionary.
+
+=> fruits.clear()
+

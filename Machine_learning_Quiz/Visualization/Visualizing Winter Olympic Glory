@@ -1,0 +1,94 @@
+To address the activities, I'll provide Python code snippets for each visualization or question. These examples assume the appropriate data (e.g., `athlete_ages`, `medal_counts`, etc.) is already loaded and structured in a DataFrame or Series. Here's the breakdown:
+
+---
+
+### 1. **Histogram of Athlete Ages**
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Example data
+athlete_ages = np.random.randint(15, 45, 200)  # Replace with actual data
+
+plt.figure(figsize=(10, 6))
+plt.hist(athlete_ages, bins=15, color='green', edgecolor='black')
+plt.title("Distribution of Athlete Ages", fontsize=14)
+plt.axvline(np.mean(athlete_ages), color='black', linestyle='dashed', linewidth=2, label=f'Average Age: {np.mean(athlete_ages):.1f}')
+plt.legend()
+plt.xlabel("Age")
+plt.ylabel("Frequency")
+plt.show()
+```
+
+---
+
+### 2. **Stacked Bar Chart for Medal Counts by Sport**
+
+```python
+# Example data
+import pandas as pd
+
+medal_counts = pd.DataFrame({
+    'Sport': ['Athletics', 'Swimming', 'Cycling'],
+    'Gold': [10, 8, 6],
+    'Silver': [5, 6, 4],
+    'Bronze': [3, 4, 2]
+}).set_index('Sport')
+
+medal_counts.plot(kind='bar', stacked=True, figsize=(12, 8), color=['gold', 'silver', 'brown'])
+plt.title("Number of Medals by Sport and Medal Type", fontsize=16)
+plt.xlabel("Sport", fontsize=12)
+plt.ylabel("Number of Medals", fontsize=12)
+plt.legend(title="Medal Type")
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### 3. **Grouped Bar Chart for Gender Participation by Sport**
+
+```python
+gender_counts = pd.DataFrame({
+    'Sport': ['Athletics', 'Swimming', 'Cycling'],
+    'Male': [20, 18, 15],
+    'Female': [15, 20, 10]
+}).set_index('Sport')
+
+gender_counts.plot(kind='bar', figsize=(12, 8), color=['blue', 'pink'])
+plt.title("Number of Athletes by Gender in Each Sport", fontsize=16)
+plt.xlabel("Sport", fontsize=12)
+plt.ylabel("Number of Athletes", fontsize=12)
+plt.legend(title="Gender")
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### 4. **Bar Chart for Total Medals by Country**
+
+```python
+medal_counts_by_country = pd.Series({
+    'USA': 100,
+    'China': 80,
+    'UK': 60,
+    'India': 40,
+    'Germany': 50
+})
+
+medal_counts_by_country.plot(kind='bar', figsize=(12, 8), color='gold', edgecolor='black')
+plt.title("Total Number of Medals Won by Each Country", fontsize=16)
+plt.xlabel("Country", fontsize=12)
+plt.ylabel("Total Number of Medals", fontsize=12)
+plt.xticks(rotation=90, ha='right')
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+For the remaining activities, the process would be similar, focusing on using **Matplotlib** and **Pandas** methods to structure plots as described. Let me know which activity you'd like detailed further!

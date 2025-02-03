@@ -1,0 +1,25 @@
+Here are three questions with answers based on "Introduction to Classification":
+
+---
+
+**Q1. What is classification in machine learning?**  
+**A:** Classification is a supervised machine learning task where the goal is to predict the category or class of a given input based on its features. For example, classifying an email as "Spam" or "Not Spam."
+
+---
+
+**Q2. What are the key differences between binary and multi-class classification?**  
+**A:**  
+- **Binary Classification**: Involves two possible classes, e.g., "Yes" or "No". Example: Predicting if a customer will buy a product.  
+- **Multi-class Classification**: Involves more than two classes. Example: Classifying an image as "Cat," "Dog," or "Bird."
+
+---
+
+**Q3. What are some commonly used algorithms for classification?**  
+**A:** Popular classification algorithms include:  
+1. Logistic Regression  
+2. Decision Trees  
+3. Random Forests  
+4. Support Vector Machines (SVM)  
+5. Neural Networks  
+
+Let me know if you want deeper explanations or practice problems! 😊

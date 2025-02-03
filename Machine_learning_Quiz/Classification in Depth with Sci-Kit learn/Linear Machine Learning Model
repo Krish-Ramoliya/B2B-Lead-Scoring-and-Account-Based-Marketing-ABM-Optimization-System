@@ -1,0 +1,24 @@
+Here are three questions with answers based on "Linear Machine Learning Models":
+
+---
+
+**Q1. What is a linear machine learning model?**  
+**A:** A linear machine learning model makes predictions based on a linear combination of the input features. The model assumes a linear relationship between the input variables and the output. Examples include Linear Regression and Logistic Regression.
+
+---
+
+**Q2. How does Linear Regression work?**  
+**A:** Linear Regression predicts a continuous output by finding the best-fit straight line (defined by \( y = mx + b \)) that minimizes the error between the predicted and actual values. The error is typically minimized using the least squares method.
+
+---
+
+**Q3. What are the key assumptions of linear models?**  
+**A:**  
+1. **Linearity**: The relationship between input and output is linear.  
+2. **Independence**: Observations are independent of each other.  
+3. **Homoscedasticity**: The variance of the errors is constant.  
+4. **No Multicollinearity**: Independent variables should not be highly correlated.  
+
+---
+
+Let me know if you want to explore these concepts further or need examples! 😊

@@ -1,0 +1,111 @@
+To address all the tasks systematically, let's handle them one by one. I'll provide Python code snippets for each.
+
+### **1. Bar Chart for Top 10 Most Populous Countries in 2023**
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("path_to_your_dataset.csv")  # Replace with actual path
+
+# Clean and preprocess
+df['Population 2023'] = df['Population 2023'].str.replace(',', '').astype(int)
+top_10_populous = df.sort_values('Population 2023', ascending=False).head(10)
+
+# Plot
+plt.figure(figsize=(10, 6))
+plt.bar(top_10_populous['Country'], top_10_populous['Population 2023'], color='skyblue')
+plt.title("Top 10 Most Populous Countries in 2023", fontsize=14)
+plt.xlabel("Country", fontsize=12)
+plt.ylabel("Population", fontsize=12)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### **2. Bar Chart for Top 3 Countries with Largest Net Migration**
+```python
+# Find top 3 by net migration
+top_3_migration = df.sort_values('Net Migration', ascending=False).head(3)
+
+# Plot
+plt.figure(figsize=(10, 6))
+plt.bar(top_3_migration['Country'], top_3_migration['Net Migration'], color='green')
+plt.title("Top 3 Countries with the Largest Net Migration", fontsize=14)
+plt.xlabel("Country", fontsize=12)
+plt.ylabel("Net Migration", fontsize=12)
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### **3. Pie Chart for World Population Share of Top 5 Countries**
+```python
+# Convert population share to float
+df['World Population Share %'] = df['World Population Share %'].str.replace('%', '').astype(float)
+top_5_countries = df.sort_values('Population 2023', ascending=False).head(5)
+other_share = 100 - top_5_countries['World Population Share %'].sum()
+
+# Data for the pie chart
+labels = list(top_5_countries['Country']) + ['Other']
+sizes = list(top_5_countries['World Population Share %']) + [other_share]
+
+# Plot
+plt.figure(figsize=(8, 8))
+plt.pie(sizes, labels=labels, colors=plt.cm.Paired.colors, autopct='%1.1f%%', startangle=140)
+plt.title("World Population Share of Top 5 Countries (2023)", fontsize=14)
+plt.show()
+```
+
+---
+
+### **4. Scatter Plot for Population vs. Land Area**
+```python
+# Plot
+plt.figure(figsize=(10, 6))
+plt.scatter(df['Land Area (Km²)'], df['Population 2023'], color='blue', alpha=0.7)
+plt.title("Relationship Between Population and Land Area (2023)", fontsize=14)
+plt.xlabel("Land Area (Km²)", fontsize=12)
+plt.ylabel("Population 2023", fontsize=12)
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### **5. Fertility Rates by Median Age Group**
+```python
+# Create bins and group data
+bins = [0, 20, 30, 40, float('inf')]
+labels = ['0-20', '21-30', '31-40', '41+']
+df['Age Group'] = pd.cut(df['Median Age'], bins=bins, labels=labels)
+
+# Calculate average fertility rate per age group
+avg_fertility = df.groupby('Age Group')['Fertility Rate'].mean()
+
+# Plot
+plt.figure(figsize=(10, 6))
+avg_fertility.plot(kind='bar', color='pink')
+plt.title("Average Fertility Rate by Age Group", fontsize=14)
+plt.xlabel("Age Group", fontsize=12)
+plt.ylabel("Fertility Rate", fontsize=12)
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### **6. Histogram for Median Age Distribution**
+```python
+# Plot
+plt.figure(figsize=(10, 6))
+plt.hist(df['Median Age'], bins=15, color='skyblue', edgecolor='black', alpha=0.7)
+plt.title("Distribution of Median Ages Across Countries", fontsize=14)
+plt.xlabel("Median Age", fontsize=12)
+plt.ylabel("Frequency", fontsize=12)
+plt.tight_layout()
+plt.show()
+```

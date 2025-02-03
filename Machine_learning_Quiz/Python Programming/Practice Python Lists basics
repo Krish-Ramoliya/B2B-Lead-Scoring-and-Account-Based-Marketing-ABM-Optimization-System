@@ -1,0 +1,155 @@
+Activities:
+
+Loading the list of words
+import pandas as pd
+words = list(pd.read_csv('words.txt').squeeze("columns").values)
+
+Append 'world' to list
+The variable l contains a simple list with 3 elements. Append the string "world" to the end of the list l.
+l = ['hello', 'world', 'goodbye']
+l.append("world")
+
+
+Concatenate the two lists
+Concatenate the two lists l1 and l2 and store the results in the list concat_result.
+Important!l1 and l2 should NOT be modified. This should be an immutable operation, only concat_result should be affected.
+l1 = [9, 8, 7]
+l2 = [1, 2, 3]
+concat_result = l1+l2
+
+
+Concatenate, shortest first
+Define the function concatenate_shortest_first that receives two lists, l1 and l2 and returns the lists concatenated, BUT, the trick is that the SHORTEST list should be the first one appearing in the resulting list.
+def concatenate_shortest_first(l1, l2):
+    pass
+concatenate_shortest_first(
+    [9, 9, 9, 9],
+    [2, 3]
+)
+def concatenate_shortest_first(l1, l2):
+    if len(l1) <= len(l2):
+        shortest = l1
+        longest = l2
+    else:
+        shortest = l2
+        longest = l1
+
+    return shortest + longest
+
+
+How many words does the variable words contain?
+The variable words contains a list of words. How many words does it contain?
+# try your code here
+import pandas as pd
+words = list(pd.read_csv('words.txt').squeeze("columns").values)
+len(words)
+=>14854
+
+
+What's the 500th word in the words list?
+# Try your code here
+import pandas as pd
+words = list(pd.read_csv('words.txt').squeeze("columns").values)
+words[499]
+=> 'copes'
+
+
+Select the sublist containing the words from position 100th to 150th
+Select the sublist containing the words from the position 100th to 150th in the variable words_100_to_150.
+Important! Both the 100th and 150th words should be included in the sublist. Also, remember that lists are 0-indexed.
+words_100_to_150 = words[99:150]
+
+
+Select the sublist containing the last 50 words
+Select the sublist of words containing the last 50 elements. Store your result in the variable last_50_words.
+last_50_words = words[-50:]
+
+
+
+Check the words that are part of the words list
+Check only the words that are part of the words list. If the word is not included in the list, don't check it.
+"word" in words
+=> panda,water,blank
+
+
+How many words finish with the character x?
+Use iteration to count how many words finish with the character x.
+# Try your code here
+count=0
+for word in words:
+    if word.endswith('x'):
+        count+=1
+count
+84
+
+
+Find all the words that have the substring cc in them
+Use iteration to create a sublist of all the words that contain the substring cc in them (example, bocci, yucca) and store them in the variable words_with_cc.
+words_with_cc = []
+for word in words:
+    if 'cc' in word:
+        words_with_cc.append(word)
+words_with_cc
+
+
+Find all the words that start and end with an y
+Use iteration to create a sublist of all the words that both start and end with the character y (example, yobby, yummy). Store your results in the variable words_with_y.
+words_with_y = []
+for word in words:
+    if word.startswith('y') and word.endswith('y'):
+        words_with_y.append(word)
+words_with_y
+
+
+Find the words that contain the characters s, m and b in order of occurrence
+# Function to check if 's', 'm', and 'b' appear in order
+def is_samba_word(word):
+    s_index = word.find('s')
+    if s_index == -1:
+        return False
+
+    rest_after_s = word[s_index + 1:]
+    m_index = rest_after_s.find('m')
+    if m_index == -1:
+        return False
+
+    rest_after_m = rest_after_s[m_index + 1:]
+    return 'b' in rest_after_m
+
+# Filter the words that contain 's', 'm', and 'b' in order
+samba_words = []
+for word in words:
+    if is_samba_word(word):
+        samba_words.append(word)
+
+print(samba_words)
+
+
+How many words contain the substring zaz?
+In this activity, you will use iteration on the list words to count how many words contain the substring zaz in them.
+zaz_words = []
+for word in words:
+    if "zaz" in word:
+        zaz_words.append(word)
+
+print(len(zaz_words))
+=>2
+
+
+
+Find all the words in an even position
+Let's define the position of a word in words starting in 1st, 2nd, etc. For example, here are the first 10 words in words:
+even_positioned_words = []
+for idx, word in enumerate(words, 1):
+    if idx % 2 == 0:
+        even_positioned_words.append(word)
+
+
+
+
+Iterate the list in reverse order, and find all the words that start with s and end with y
+So far, you've created sublists by just iterating words as it is. For this task, you need to create the sublist words_s_y_reversed containing words that start with s and end with y, but the order has to be reversed.
+words_s_y_reversed = []
+for word in words[::-1]:
+    if word.startswith('s') and word.endswith('y'):
+        words_s_y_reversed.append(word)

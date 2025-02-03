@@ -1,0 +1,60 @@
+Here's how you can create these visualizations in Matplotlib:
+
+---
+
+### **Visualization 1: Two-Point Plots on the Same Graph**
+This plot compares normalized poverty rates and high school graduation rates.
+
+```python
+import matplotlib.pyplot as plt
+
+# Assuming `df` is your dataframe containing the data
+plt.figure(figsize=(14, 7))
+
+# Plot normalized poverty rates
+plt.plot(df['normalized_poverty_rate'], marker='o', color='red', label='Poverty Rate')
+
+# Plot normalized high school graduation rates
+plt.plot(df['normalized_hs_rate'], marker='x', color='blue', label='HS Graduation Rate')
+
+# Add labels, title, and legend
+plt.xlabel('States')
+plt.ylabel('Rates (Normalized)')
+plt.title('Comparison of Normalized Poverty and High School Graduation Rates')
+plt.legend()
+plt.grid(True)
+
+# Show the plot
+plt.show()
+```
+
+---
+
+### **Visualization 2: Scatter Plot**
+This plot visualizes the relationship between normalized high school graduation rates and poverty rates.
+
+```python
+plt.figure(figsize=(14, 7))
+
+# Create scatter plot
+plt.scatter(df['normalized_hs_rate'], df['normalized_poverty_rate'], color='purple', alpha=0.7)
+
+# Add labels, title, and grid
+plt.xlabel('Normalized HS Graduation Rate')
+plt.ylabel('Normalized Poverty Rate')
+plt.title('Scatter Plot: HS Graduation Rate vs Poverty Rate')
+plt.grid(True)
+
+# Show the plot
+plt.show()
+```
+
+---
+
+### **Key Notes**
+- **Figure Size:** The `figsize=(14, 7)` ensures the plots have the required size.
+- **Markers and Colors:** Markers are customized to represent the two indicators effectively (red circles and blue x markers in the first plot).
+- **Gridlines:** Added to make the plots more readable.
+- **Legend:** Helps differentiate between the two indicators in the first visualization.
+
+Let me know if you'd like to enhance these plots further!

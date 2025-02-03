@@ -1,0 +1,19 @@
+What is the difference between supervised and unsupervised machine learning?. Which of the following statements are true?
+Supervised learning is used when we want to predict a certain outcome from a given input.
+The goal for unsupervised learning is to model the underlying structure or distribution in the data.
+
+Select which of the following scenarios are regression problems.
+Predict the score that a student will achieve in an exam whose grade can be 0.1, 2,. . . , 10
+Predict how much a company will spend on electricity the next semester.
+
+
+Select which of the following scenarios are classification problems.
+Determine whether a customer is likely to purchase more items or not
+An algorithm is trained to recognize spam email by learning the characteristics of what constitutes spam vs non-spam email.
+
+
+Suppose you want to develop a supervised machine learning model to predict whether a superhero will fly or not. Which of the following statements are true?
+
+
+A regression model is the best way to predict the probability to fly.
+A classification model provide the best approach.

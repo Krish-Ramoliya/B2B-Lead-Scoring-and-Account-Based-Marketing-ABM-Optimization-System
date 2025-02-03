@@ -1,0 +1,67 @@
+Here’s how you can approach these activities in Matplotlib:
+
+---
+
+### **1. Creating a Figure and Axis in Matplotlib**
+
+Use the `subplots` function to create a Figure (`fig`) and an Axes (`ax`) object.
+
+```python
+import matplotlib.pyplot as plt
+
+# Create a figure and axis
+fig, ax = plt.subplots()
+
+# Display the empty plot
+plt.show()
+```
+
+---
+
+### **2. Understanding Figures and Axes in Matplotlib**
+
+The correct answer is:
+**A Figure is the entire plotting area or canvas, while an Axes is an individual plot within the Figure.**
+
+#### Explanation:
+- **Figure**: The overall container that holds all the elements of a plot, including axes, titles, and labels. Think of it as the "canvas."
+- **Axes**: Represents an individual plot within the Figure. It's where data is plotted (e.g., a graph, histogram, or scatter plot).
+
+---
+
+### **3. Create a Basic Line Plot**
+
+Plot a line chart using the data `x = [2, 4, 6, 8]` and `y = [15, 30, 45, 60]`.
+
+```python
+# Data for the plot
+x = [2, 4, 6, 8]
+y = [15, 30, 45, 60]
+
+# Create a figure and axis
+fig, ax = plt.subplots()
+
+# Plot the data
+ax.plot(x, y)
+
+# Add labels and title
+ax.set_title('Basic Line Plot')
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+
+# Display the plot
+plt.show()
+```
+
+---
+
+### Key Points for Beginners:
+1. **`subplots` Function**:
+   - Use `fig, ax = plt.subplots()` to create a blank canvas (`fig`) and an axis (`ax`) for plotting.
+2. **Plotting**:
+   - Use `ax.plot()` for line charts, `ax.bar()` for bar charts, etc.
+3. **Customization**:
+   - Titles: `ax.set_title()`
+   - Axis Labels: `ax.set_xlabel()` and `ax.set_ylabel()`
+
+Let me know if you’d like to explore additional customization options or advanced plotting techniques!

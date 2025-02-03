@@ -1,0 +1,34 @@
+Great! Let's start step-by-step. First, we'll load the dataset and perform the preliminary tasks:  
+
+1. Drop any unnamed columns.  
+2. Convert the date column to datetime format.  
+3. Create the first plot: **Number of Crimes That Occurred Each Day**.  
+
+Please ensure the dataset is available in a CSV file, and share the filename or path. Here's the initial code template:  
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataset
+file_path = "path_to_your_dataset.csv"  # Replace with your dataset's path
+df = pd.read_csv(file_path)
+
+# Drop unnamed columns
+df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+
+# Convert the date column to datetime format
+df['date'] = pd.to_datetime(df['date'], errors='coerce')
+
+# Group data by date and count the number of crimes
+daily_crimes = df.groupby('date').size()
+
+# Plot the daily crime counts
+plt.figure(figsize=(10, 6))
+plt.plot(daily_crimes.index, daily_crimes.values, color='blue')
+plt.title("Daily Crime Counts")
+plt.xlabel("Date")
+plt.ylabel("Number of Crimes")
+plt.grid(True)
+plt.show()
+```

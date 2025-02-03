@@ -1,0 +1,9 @@
+True or False: Clustering is a common task in unsupervised learning, where data points are grouped together based on similarity
+True
+
+Imagine you work for an e-commerce company. The company has a large database of customer transactions, and your task is to segment customers into different groups for targeted marketing. Which unsupervised learning technique would you use?
+For customer segmentation in e-commerce, you can use clustering algorithms like K-means or hierarchical clustering.
+
+You are a financial analyst at a bank and need to detect potentially fraudulent transactions in a credit card dataset. How could unsupervised learning be applied to identify unusual transaction patterns indicative of fraud?
+Unsupervised learning can NOT be applied to detect fraudulent transactions.
+

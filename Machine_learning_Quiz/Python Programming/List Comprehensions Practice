@@ -1,0 +1,98 @@
+1. Lower-case all the companies in sp_companies
+
+Write a list comprehension that transforms the companies contained in sp_companies and lower-case them all. It'll turn them from this: ['A', 'AAL', 'AAP', 'AAPL'] to this ['a', 'aal', 'aap', 'aapl'].
+
+=> [comp.lower() for comp in sp_companies]
+
+
+2. Standarize all the values in electricity_demand
+
+Standardization is a statistical technique amply used in Machine Learning to put different variables on the same scale. From the Wikipedia page:
+
+In statistics, the standard score is the number of standard deviations by which the value of a raw score (i.e., an observed value or data point) is above or below the mean value of what is being observed or measured. Raw scores above the mean have positive standard scores, while those below the mean have negative standard scores.
+
+In simple terms, to standardize a sample, you must subtract the mean and divide by the standard deviation. Consider the mean of the values in electricity_demand to be 29617 and the standard deviation 5566 (we are rounding it), and write a list comprehension that will standardize all the samples. You'll go from this: [22262, 21756, 22247, 22759, 22549] to this: [-1.3211783725525417, -1.412071133465062, -1.3238728219867073, -1.231902281300521, -1.2696245733788396].
+
+=> [(sample - 29617) / 5566 for sample in electricity_demand]
+
+
+3. Filter the values in electricity_demand that are greater than the mean
+
+Considering the mean of the values in electricity_demand to be 29617, write a list comprehension that returns only the values that are greater than the mean.
+
+=> [sample for sample in electricity_demand if sample > 29617]
+
+ 4. Filter only companies that end with an X
+
+Write a list comprehension that filters companies in sp_companies and returns only the ones that end with an X. For example: FCX, KMX, TWX, etc.
+
+=> [comp for comp in sp_companies if comp.endswith('X')]
+
+
+5. Return the length of the ticker for companies that end with an L
+
+Using the tickers in the list sp_companies, write a list comprehension that returns the length of the ticker, but only if it ends with an L. So, for example, if the original list contains ['AAPL', 'FB', 'GOOGL'], your list comprehension should return [4, 5] (FB doesn't end with L).
+
+=> [len(ticker) for ticker in sp_companies if ticker.endswith('L')]
+
+
+6. Return the ticker and its length (in characters) for companies that contain an X in its ticker
+
+Using the tickers in the list sp_companies, write a list comprehension that returns a tuple containing the ticker of the company and the length of the ticker, but only if the ticker contains an X.
+
+For example, given ['ALXN', 'AAPL', 'PX', 'FB', 'XEL'] your list comprehension should return [('ALXN', 4), ('PX', 2), ('XEL', 3)].
+
+=> [(ticker, len(ticker)) for ticker in sp_companies if 'X' in ticker]
+
+
+7. Format the result from the previous activity to return a single string with the ticker and its length
+
+Similar to the previous activity, instead of returning a tuple, return a single string with the format: "Ticker: {the ticker}. Ticker Length: {length of the ticker}".
+
+For example, given ['ALXN', 'AAPL', 'PX', 'FB', 'XEL'] your list comprehension should return:
+
+['Ticker: ALXN. Ticker Length: 4',
+ 'Ticker: PX. Ticker Length: 2',
+ 'Ticker: XEL. Ticker Length: 3']
+
+=> [f"Ticker: {ticker}. Ticker Length: {len(ticker)}" for ticker in sp_companies if 'X' in ticker]
+
+
+8. What's the mean of the prices in sp_prices?
+
+Use the price in sp_prices to calculate the mean. Round down to an integer. For example, if you find the mean to be 64.872, enter 64. You can use the numpy or statistics modules.
+
+=> import numpy as np
+import statistics
+
+# Numpy
+>>> np.mean([price for ticker, price in sp_prices])
+107.76220792079208
+
+# statistics
+>>> statistics.mean([price for ticker, price in sp_prices])
+107.76220792079208
+
+
+9. Return ticker and stock price of companies in sp_prices whose price is above the mean
+
+Using the mean value calculated in the previous activity, write a list comprehension that returns the ticker and price values (as a tuple) of those companies whose price is above the mean.
+
+=> [(ticker, price) for ticker, price in sp_prices if price > 107]
+
+
+10. Return the price of the stocks of the FAANG companies
+
+FAANG represents hot tech companies: Facebook (FB) (now META), Amazon (AMZN), Apple (AAPL), Netflix (NFLX) and Google (GOOGL) (now Alphabet).
+
+Write a list comprehension that returns the prices of FAANG stocks in sp_prices. You can use the variable faang_tickers defined in the notebook.
+
+=> [price for ticker, price in sp_prices if ticker in faang_tickers]
+
+
+11. Return the price and the ticker of those companies that start with a B and contain an X (anywhere in the ticker)
+
+Write a list comprehension that returns the price and the ticker of those companies whose ticker begins with a B and contains an X (anywhere in the ticker). Important! We want to see the price first, your result should look something like: [(65.55, 'BAX'), (221.92, 'BDX'), ...]
+
+=> [(price, ticker) for ticker, price in sp_prices if ticker.startswith('B') and 'X' in ticker]
+
